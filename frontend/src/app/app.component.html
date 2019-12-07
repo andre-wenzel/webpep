@@ -1,12 +1,20 @@
-  <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-      <a routerLink="/fancy">Fancy</a>
-      <a routerLink="/nice">Nice</a>
-    </div>
-    
-    <!-- Use any element to open the sidenav -->
-    <span (click)='openNav()'>open</span>
+<div id="mySidenav" class="sidenav shadow">
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/fancy">Settings</a>
+  <a routerLink="/nice">About</a>
+</div>
 
-<div class="content" role="main">
-  <router-outlet></router-outlet>
+<div id="main">
+  <div class="header toolbar">
+      <div id="menuIcon" class="container" (click)="toggleNav()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <h2 class="appTitle">WebPEP</h2>
+  </div>
+  
+  <div class="contentArea">
+    <router-outlet></router-outlet>
+  </div>
 </div>

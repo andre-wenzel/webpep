@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FancyComponentComponent } from './fancy.component/fancy.component.component';
 import { NiceComponent } from './nice/nice.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FancyComponentComponent,
-    NiceComponent
+    NiceComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

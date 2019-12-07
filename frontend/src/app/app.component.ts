@@ -8,14 +8,20 @@ import { asapScheduler } from 'rxjs';
 })
 export class AppComponent {
   title = 'webpep';
+  action = 'open';
 
-  openNav(): void {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  };
-  
-  closeNav(): void {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-  };
+  toggleNav(): void {
+    document.getElementById("menuIcon").classList.toggle("change");
+    if (this.action === "open") {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      this.action = "close";
+    }
+    else {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      this.action = "open";
+    }
+
+  }
 }

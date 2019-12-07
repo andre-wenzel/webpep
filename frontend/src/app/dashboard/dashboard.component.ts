@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { PepDataService } from '../pep-data.service';
+import { DashboardItem } from '../dashboard-models'
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  public items: DashboardItem[];
+  
+  constructor(private pepDataService: PepDataService ) { }
 
   ngOnInit() {
+    this.items = this.pepDataService.getDashboardItem();
   }
-
 }
+
+

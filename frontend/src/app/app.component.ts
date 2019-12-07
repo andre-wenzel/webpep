@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { asapScheduler } from 'rxjs';
+import { DashboardItem } from './dashboard-models';
+import { PepDataService } from './pep-data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,14 @@ import { asapScheduler } from 'rxjs';
 export class AppComponent {
   title = 'webpep';
   action = 'open';
+
+  areas: DashboardItem[];
+  
+  constructor(private pepDataService: PepDataService ) { }
+
+  ngOnInit() {
+    this.areas = this.pepDataService.getDashboardItem();
+  }
 
   toggleNav(): void {
     document.getElementById("menuIcon").classList.toggle("change");

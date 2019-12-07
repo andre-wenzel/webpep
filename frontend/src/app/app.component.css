@@ -379,3 +379,7 @@
 .contentArea {
   padding-top: 50px;
 }
+
+li{
+  list-style-type: none;
+}
